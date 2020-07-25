@@ -1,24 +1,18 @@
 class UsersController < ApplicationController
 
-  get '/users' do
-    @users = User.all
-    erb :'/users/index' 
-  end
-
   get '/users/new' do 
     erb :'/users/new'
   end
 
   post '/users' do 
-    @user = Brand.create(params[:user])
+    @user = User.new(username: params["name"], email: params["email"], password: params["password"])
     
-    if !params["brand"]["name"].empty?
-      @brand.user = User.create(name: params["user"]["name"])
+    if @user.save 
+      session[:user_id] = @user.id 
+      redirect to "users/#{@user.id}"
+    else
+      redirect to '/signup'
     end
-    
-    @user.save
-    
-    redirect to "users/#{@user.id}"
   end
 
   get '/users/:id' do 

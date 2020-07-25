@@ -1,9 +1,11 @@
 class BrandsController < ApplicationController
 
   get '/brands' do
-    @brands = Brand.all
-    
-    erb :'/brands/index' 
+    if is_logged_in?
+      @brands = current_user.brands
+      erb :'/brands/index' 
+    else 
+      redirect to '/login'
   end
 
   get '/brands/new' do 
