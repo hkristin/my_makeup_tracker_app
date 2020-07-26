@@ -1,0 +1,11 @@
+<h1><%= @brand.name %></h1>
+
+<strong>Palettes: </strong> <%= @brand.palettes %> <br />
+<strong>Age: </strong> <%= @brand.age %> <br />
+<strong>Clean: </strong> 
+<% if @brand.clean %>
+Yes
+<% else %>
+No
+
+<% end %>
