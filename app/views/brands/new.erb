@@ -1,9 +1,12 @@
 <h1>New Favorite Brand</h1>
 
-<form action="/users" method="POST">
+<form action="/brands" method="POST">
   <strong>Name: </strong><input type="text" name="name"><br>
-  <strong>Palettes: </strong><input type="text" name="email"><br>
-  <strong>Age: </strong><input type="integer" name="password"><br>
-  <strong>Clean: </strong><input type="boolean" name="password"><br>
+  <strong>Palettes: </strong><input type="text" name="palettes"><br>
+  <strong>Age: </strong><input type="integer" name="age"><br>
+  <strong>Clean: </strong><input type="radio" value=true name="clean">
+  <label>Yes</label>
+  <input type="radio" value=false name="clean">
+  <label>No</label><br>
   <input type="submit" value="Create New Favorite Brand">
 </form>

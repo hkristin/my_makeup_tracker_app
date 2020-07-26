@@ -15,7 +15,20 @@ class BrandsController < ApplicationController
   end
 
   post '/brands' do 
-     @brand = Brand.create(params[:brand])
+     
+     @brand = Brand.new() 
+     
+     @brand.name = params[:name]
+     @brand.palettes = params[:palettes]
+     @brand.age = params[:age]
+     
+     if(params[:clean] == "true")
+       @brand.clean = true
+     else 
+       @brand.clean = false 
+     end
+     
+     current_user.brands << @brand
      
      redirect "brands/#{@brand.id}"
   end
