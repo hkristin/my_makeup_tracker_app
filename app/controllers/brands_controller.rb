@@ -32,7 +32,6 @@ class BrandsController < ApplicationController
   end
 
   patch '/brands/:id' do 
- 
     @brand = Brand.find(params[:id])
     @brand.update(params[:brand])
   

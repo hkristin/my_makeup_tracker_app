@@ -28,9 +28,6 @@ class UsersController < ApplicationController
   patch '/users/:id' do 
     @user = User.find(params[:id])
     @user.update(params[:user])
-    if !params["owner"]["name"].empty?
-      @user.brand = Brand.create(name: params["brand"]["name"])
-    end
     
     @user.save
     redirect to "users/#{@user.id}"
