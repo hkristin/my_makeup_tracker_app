@@ -1,1 +1,9 @@
+
 <h1><%= current_user.username %>'s Favorite Brands</h1>
+
+
+<ul>
+  <% @brands.each do |b| %> 
+    <a href="/brands/<%= b.id %>"><li><%= b.name %></li></a>
+  <% end %>
+</ul>
