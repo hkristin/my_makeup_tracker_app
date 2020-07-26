@@ -6,6 +6,7 @@ class BrandsController < ApplicationController
       erb :'/brands/index' 
     else 
       redirect to '/login'
+    end
   end
 
   get '/brands/new' do 
