@@ -7,5 +7,13 @@
 Yes
 <% else %>
 No
-
 <% end %>
+
+<br>
+
+<a href="/brands/<%= @brand.id %>/edit">Edit Brand</a>
+
+<form action="/brands/<%= @brand.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Brand" />
+</form>

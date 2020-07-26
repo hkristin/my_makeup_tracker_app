@@ -46,9 +46,22 @@ class BrandsController < ApplicationController
 
   patch '/brands/:id' do 
     @brand = Brand.find(params[:id])
-    @brand.update(params[:brand])
+    params.delete("_method") # deletes the _method property from the params hash (via form data)
+    if current_user.id == @brand.user_id && @brand.update(params)
+      redirect "brands/#{@brand.id}"
+    else 
+      redirect "brands/#{@brand.id}/edit"
+    end
+  end
   
-    redirect "brands/#{@brand.id}"
+  delete '/brands/:id' do 
+    if is_logged_in? && current_user.id == Brand.find(params[:id]).user_id
+      @brand = Brand.find(params[:id])
+      @brand.destroy
+      redirect to '/brands'
+    else 
+      redirect to '/login'
+    end
   end
   
 end

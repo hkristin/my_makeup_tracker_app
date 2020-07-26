@@ -1,10 +1,13 @@
 <h1>Edit Brands</h1>
 
-<form action="/brands" method="POST">
-  <strong>Name: </strong><input type="text" name="name"><br>
-  <strong>Palettes: </strong><input type="text" name="palettes"><br>
-  <strong>Age: </strong><input type="integer" name="password"><br>
-  <strong>Clean: </strong><input type="radio" value="Yes" name="clean"><br>
-  <input type="radio" value="No" name="clean">
-  <input type="submit" value="Submit Changes">
+<form action="/brands/<%= @brand.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <strong>Name: </strong><input type="text" name="name" value=<%= @brand.name%>><br>
+  <strong>Palettes: </strong><input type="text" name="palettes" value=<%= @brand.palettes%>><br>
+  <strong>Age: </strong><input type="integer" name="age" value=<%= @brand.age%>><br>
+  <strong>Clean: </strong><input type="radio" value=true name="clean">
+  <label>Yes</label>
+  <input type="radio" value=false name="clean">
+  <label>No</label><br>
+  <input type="submit" value="Submit Edits">
 </form>
