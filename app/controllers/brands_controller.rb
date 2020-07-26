@@ -16,11 +16,8 @@ class BrandsController < ApplicationController
 
   post '/brands' do 
      @brand = Brand.create(params[:brand])
-     if !params["brand"]["name"].empty?
-      @brand.pets << Brand.create(name: params["brand"]["name"])
-  end
-  
-  redirect "brands/#{@brand.id}"
+     
+     redirect "brands/#{@brand.id}"
   end
 
   get '/brands/:id/edit' do 
@@ -38,10 +35,7 @@ class BrandsController < ApplicationController
  
     @brand = Brand.find(params[:id])
     @brand.update(params[:brand])
-    
-    if !params["brand"]["name"].empty?
-      @brand.pets << Pet.create(name: params["brand"]["name"])
-    end
+  
     redirect "brands/#{@brand.id}"
   end
   
