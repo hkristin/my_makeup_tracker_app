@@ -1,7 +1,7 @@
 brandon = User.new(
   id: 1,
   username: "Brandon",
-  email: "brandon@example",
+  email: "brandon@example.com",
   password: "password"
   )
   
