@@ -5,13 +5,15 @@ My Sinatra project allows a user to log in, sign up, and log out. Once an accoun
 
 
 # Installation
-1. Clone the repo and cd into the my_makeup_tracker_app directory
-2. Run bundle install to install the gem dependencies. 
-3. Run a 'shotgun' server and copy the port number into a new browser.
+1. Clone the repo and `cd` into the `my_makeup_tracker_app` directory
+2. Run `bundle install` to install the gem dependencies. 
+3. Run a `shotgun` server and copy the port number into a new browser.
 
 # Usage
-* Enter a valid username, email, and password to create an account.
-* Create makeup brands that you prefer and then edit or delete them as needed.
+* Enter a valid username, email, and password to create or log into an account.
+* Once logged in, click on "Brands" to view the user's current list of brands.
+* Click "Create New Favorite Brand" to go to new brand form.
+* Click "Edit Brand" to edit a brand and "Delete Brand" to delete a brand. 
 * Login and logout as needed.
 
 # License
