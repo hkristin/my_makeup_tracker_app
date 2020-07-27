@@ -1,10 +1,12 @@
 
 <h1><%= current_user.username %>'s Favorite Brands</h1>
 
-<a href= "/brands/new">Create New Favorite Brand</a>
+<a href= "/brands/new">Create New Favorite Brand</a><br />
 
 <ul>
   <% @brands.each do |b| %> 
     <a href="/brands/<%= b.id %>"><li><%= b.name %></li></a>
   <% end %>
 </ul>
+
+<a href="/users/<%= current_user.id %>"><%= current_user.username %>'s Page</a>
