@@ -10,3 +10,4 @@ run ApplicationController
 use SessionsController
 use UsersController
 use BrandsController
+use CategoriesController

@@ -1,0 +1,11 @@
+<h1>New Category</h1>
+
+<form action="/categories" method="POST">
+  <strong>Name: </strong><input type="text" name="name"><br>
+
+  <h4>Select 1+ brands below:</h4>
+  <% Brand.all.each do |brand| %>
+    <input type="checkbox" name="brand_ids[]" value="<%= brand.id %>"><%= brand.name %></input><br />
+  <% end %>
+  <input type="submit" value="Create Category">
+</form>

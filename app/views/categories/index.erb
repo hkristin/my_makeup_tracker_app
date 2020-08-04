@@ -1,0 +1,10 @@
+<h1>Categories for <%= current_user.username %></h1>
+
+<a href="/categories/new">Create New Category</a><br /><br />
+
+<h3>List of Categories</h3>
+
+<% Category.all.each do |category| %>
+  <a href="/categories/<%= category.id %>"><%= category.name %></a> <br />
+
+<% end %>

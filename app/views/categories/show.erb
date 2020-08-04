@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+
+<h3>List of Brands</h3>
+<% @category.brands.each do |brand| %>
+  <a href="/brands/<%= brand.id %>"><%= brand.name %></a> <br />
+<% end %>
+
+
+<form  action="/categories/<%= @category.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="Delete Category" />
+</form>
